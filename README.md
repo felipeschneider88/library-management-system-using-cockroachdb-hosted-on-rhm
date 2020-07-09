@@ -1,5 +1,5 @@
 
-# [Library Management System using CockroachDB hosted on RHM]
+# Library Management System using CockroachDB hosted on RHM
 
 A Library Management System is a software that uses to maintain the record of the library. It contains work like the number of available books in the library, the number of books are issued or returning or renewing a book or late fine charge record, etc.
 
@@ -13,9 +13,6 @@ When you have completed this code pattern, you will understand how to:
 * Store and query unstructured JSON data from a third-party API in CockroachDB
 * Manage CockroachDB cluster from the Cluster Overview page
 
-<!--add an image in this path-->
-![architecture]()
-
 <!--Optionally, add flow steps based on the architecture diagram-->
 ## Flow
 
@@ -24,11 +21,6 @@ When you have completed this code pattern, you will understand how to:
 3. Step 3.
 4. Step 4.
 5. Step 5.
-
-<!--Optionally, update this section when the video is created-->
-# Watch the Video
-
-[![video]()
 
 # Steps
 
