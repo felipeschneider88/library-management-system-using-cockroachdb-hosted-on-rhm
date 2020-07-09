@@ -1,81 +1,210 @@
-<!-- This should be the location of the title of the repository, normally the short name -->
-# repo-template
+The README for a code pattern is very prescriptive, use the following template to get you started.
 
-<!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
-<!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
+<!-- Put badges at the very top -->
+<!-- Change the repo -->
+[![Build Status](https://travis-ci.org/IBM/watson-banking-chatbot.svg?branch=master)](https://travis-ci.org/IBM/watson-banking-chatbot)
 
-<!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
-## Scope
+<!-- Add a new Title and fill in the blanks -->
+# [Title]
 
-The purpose of this project is to provide a template for new open source repositories.
+In this code pattern, we will [create something] using [technologies] and [components]. [Explain briefly how things work]. [Give acknowledgements to others if necessary]
 
-<!-- A more detailed Usage or detailed explaination of the repository here -->
-## Usage
+When you have completed this code pattern, you will understand how to:
 
-This repository contains some example best practices for open source repositories:
+* [goal 1]
+* [goal 2]
+* [goal 3]
+* [goal 4]
 
-* [LICENSE](LICENSE)
-* [README.md](README.md)
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [MAINTAINERS.md](MAINTAINERS.md)
-<!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
-* [CHANGELOG.md](CHANGELOG.md)
+<!--add an image in this path-->
+![architecture](doc/source/images/architecture.png)
 
-> These are optional
+<!--Optionally, add flow steps based on the architecture diagram-->
+## Flow
 
-<!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
-* [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
+1. Step 1.
+2. Step 2.
+3. Step 3.
+4. Step 4.
+5. Step 5.
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+<!--Optionally, update this section when the video is created-->
+# Watch the Video
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
+[![video](http://img.youtube.com/vi/Jxi7U7VOMYg/0.jpg)](https://www.youtube.com/watch?v=Jxi7U7VOMYg)
 
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
+# Steps
 
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
+Use the **Deploy to IBM Cloud** button **OR** create the services and run locally.
 
-<!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
-If you have any questions or issues you can create a new [issue here][issues].
+<!--Optionally, add a deploy to ibm cloud button-->
 
-Pull requests are very welcome! Make sure your patches are well tested.
-Ideally create a topic branch for every separate change you make. For
-example:
+## Deploy to IBM Cloud
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+[![Deploy to IBM Cloud](https://cloud.ibm.com/deploy/button.png)](https://cloud.ibm.com/deploy?repository=https://github.com/IBM/watson-banking-chatbot.git)
 
-<!-- License and Authors is optional here, but gives you the ability to highlight who is involed in the project -->
-## License & Authors
+1. Press **Deploy to IBM Cloud**, and then click **Deploy**.
 
-If you would like to see the detailed LICENSE click [here](LICENSE).
+<!--optional step-->
+2. In Toolchains, click **Delivery Pipeline** to watch while the app is deployed. After it's deployed, the app can be viewed by clicking **View app**.
+![toolchain pipeline](doc/source/images/toolchain-pipeline.png)
 
-- Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
+<!--update with service names from manifest.yml-->
 
-```text
-Copyright:: 2019- IBM, Inc
+3. To see the app and services created and configured for this code pattern, use the IBM Cloud dashboard. The app is named `watson-banking-chatbot` with a unique suffix. The following services are created and easily identified by the `wbc-` prefix:
+    * `wbc-conversation-service`
+    * `wbc-discovery-service`
+    * `wbc-natural-language-understanding-service`
+    * `wbc-tone-analyzer-service`
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+## Run locally
 
-http://www.apache.org/licenses/LICENSE-2.0
+> NOTE: These steps are only needed when running locally instead of using the **Deploy to IBM Cloud** button.
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+<!-- there are MANY updates necessary here, just screenshots where appropriate -->
+
+1. [Clone the repo](#1-clone-the-repo).
+2. [Create Watson services](#2-create-watson-services).
+3. [Import the Watson Assistant workspace](#3-import-the-watson-assistant-workspace).
+4. [Load the Watson Discovery documents](#4-load-the-watson-discovery-documents).
+5. [Configure credentials](#5-configure-credentials).
+5. [Run the application](#6-run-the-application).
+
+### 1. Clone the repo
+
+Clone the `watson-banking-chatbot` repo locally. In a terminal, run:
+
+```bash
+git clone https://github.com/IBM/watson-banking-chatbot
 ```
 
+We’ll be using the file [`data/assistant/workspaces/banking.json`](data/assistant/workspaces/banking.json) and the folder
+[`data/assistant/workspaces/`](data/assistant/workspaces/)
 
-[issues]: https://github.com/IBM/repo-template/issues/new
+### 2. Create Watson services
+
+Create the following services:
+
+* [**Watson Assistant**](https://cloud.ibm.com/catalog/services/assistant)
+* [**Watson Discovery**](https://cloud.ibm.com/catalog/services/discovery)
+* [**Watson Tone Analyzer**](https://cloud.ibm.com/catalog/services/tone-analyzer)
+* [**Watson Natural Language Understanding**](https://cloud.ibm.com/catalog/services/natural-language-understanding)
+
+### 3. Import the Watson Assistant workspace
+
+* Find the Watson Assistant service in your IBM Cloud Dashboard.
+* Select the service, and then click **Launch tool**.
+* Go to the **Skills** tab.
+* Click **Create skill**.
+* Click the **Import skill** tab.
+* Click **Choose JSON file**, go to your cloned repo dir, and `Open` the workspace.json file in `data/conversation/workspaces/banking.json` (or the old full version in `full_banking.json`).
+* Select **Everything**, and click **Import**.
+
+To find the `WORKSPACE_ID` for Watson Assistant:
+
+* Go back to the **Skills** tab.
+* Click the three dots in the upper-right corner of the **watson-banking-chatbot** card, and select **View API Details**.
+* Copy the `Workspace ID` GUID.
+  ![view_api_details](doc/source/images/view_api_details.png)
+
+*Optionally*, to view the assistant dialog, select the workspace and choose the
+**Dialog** tab. Here's a snippet of the dialog:
+
+![dialog](doc/source/images/dialog.PNG)
+
+### 4. Load the Watson Discovery documents
+
+Launch the **Watson Discovery** tool. Create a **new data collection**,
+and give the data collection a unique name.
+
+> Save the **environment_id** and **collection_id** for your `.env` file in the next step.
+
+Under **Add data to this collection**, use **Drag and drop your documents here or browse from computer** to seed the content with the five documents in `data/discovery/docs`.
+
+### 5. Configure credentials
+
+The credentials for IBM Cloud services (Watson Assistant, Watson Discovery, 
+Watson Tone Analyzer and Watson Natural Language Understanding) can be found in the **Services** menu in IBM Cloud
+by selecting the **Service Credentials** option for each service.
+
+The other settings for Watson Assistant and Watson Discovery were collected during the
+earlier setup steps (``DISCOVERY_COLLECTION_ID``, ``DISCOVERY_ENVIRONMENT_ID``, and
+``WORKSPACE_ID``).
+
+Copy the [`env.sample`](env.sample) to `.env`.
+
+```bash
+cp env.sample .env
+```
+Edit the `.env` file with the necessary settings.
+
+#### `env.sample:`
+
+```bash
+# Copy this file to .env and replace the credentials with
+# your own before starting the app.
+
+# Note: If you are using older services, you may need _USERNAME and _PASSWORD
+# instead of _IAM_APIKEY.
+
+# Watson Assistant
+WORKSPACE_ID=<add_assistant_workspace>
+ASSISTANT_URL=<add_assistant_url>
+ASSISTANT_IAM_APIKEY=<add_assistant_iam_apikey>
+
+# Watson Discovery
+DISCOVERY_URL=<add_discovery_url>
+DISCOVERY_ENVIRONMENT_ID=<add_discovery_environment_id>
+DISCOVERY_COLLECTION_ID=<add_discovery_collection_id>
+DISCOVERY_IAM_APIKEY=<add_discovery_iam_apikey>
+
+# Watson Natural Language Understanding
+NATURAL_LANGUAGE_UNDERSTANDING_URL=<add_nlu_url>
+NATURAL_LANGUAGE_UNDERSTANDING_IAM_APIKEY=<add_nlu_iam_apikey>
+
+# Watson Tone Analyzer
+TONE_ANALYZER_URL=<add_tone_analyzer_url>
+TONE_ANALYZER_IAM_APIKEY=<add_tone_analyzer_iam_apikey>
+
+# Run locally on a non-default port (default is 3000)
+# PORT=3000
+```
+
+### 6. Run the application
+
+1. Install [Node.js](https://nodejs.org/en/) runtime or NPM.
+1. Start the app by running `npm install`, followed by `npm start`.
+1. Use the chatbot at `localhost:3000`.
+
+> Note: The server host can be changed as required in the server.js file, and `PORT` can be set in the `.env` file.
+
+<!--Add a section that explains to the reader what typical output looks like, include screenshots -->
+
+# Sample output
+
+![sample_output](doc/source/images/sample_output.png)
+
+<!--Optionally, include any troubleshooting tips (driver issues, etc)-->
+
+# Troubleshooting
+
+* Error: Environment {GUID} is still not active, retry once status is active
+
+  > This is common during the first run. The app tries to start before the Watson Discovery
+environment is fully created. Allow a minute or two to pass. The environment should
+be usable on restart. If you used **Deploy to IBM Cloud** the restart should be automatic.
+
+* Error: Only one free environment is allowed per organization
+
+  > To work with a free trial, a small free Watson Discovery environment is created. If you already have
+a Watson Discovery environment, this will fail. If you are not using Watson Discovery, check for an old
+service thay you might want to delete. Otherwise, use the `.env DISCOVERY_ENVIRONMENT_ID` to tell
+the app which environment you want it to use. A collection will be created in this environment
+using the default configuration.
+
+<!-- keep this -->
+## License
+
+This code pattern is licensed under the Apache License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1](https://developercertificate.org/) and the [Apache License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+
+[Apache License FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
