@@ -12,13 +12,14 @@ When you have completed this code pattern, you will understand how to:
 * Store and query unstructured JSON data from a third-party API in CockroachDB
 * Manage CockroachDB cluster from the Cluster Overview page
 
+![](doc/source/images/Architecture.png)
+
 ## Flow
 
-1. Step 1.
-2. Step 2.
-3. Step 3.
-4. Step 4.
-5. Step 5.
+1. User performs an operation like `borrowing a book` or `returning a book`.
+2. Application updates appropriate CockroachDB table accordingly.
+3. Application fetches the updated data from the table.
+4. Application displays the updated data that was feteched from the table. 
 
 ## Steps
 
