@@ -65,8 +65,6 @@ A Library Management System is a software that uses to maintain the record of th
 
 # Related IBM Developer content
 
-> List any IBM Developer resources that are closely related to this pattern, such as other patterns, blog posts, tutorials, etc..
-
 * [Perform DML Operations with CockroachDB hosted on Red Hat Marketplace](https://github.com/IBM/dml-operations-cockroachdb-operator-rhm): In this tutorial, you will learn how to perform CRUD operations with CockroachDB hosted on Red Hat Marketplace using python runtime and Jupyter notebook.
 
 * [Store and query unstructured JSON data from CockroachDB hosted on Red Hat Marketplace](https://github.com/IBM/store-and-query-unstructured-json-cockroachdb-operator-rhm): In this tutorial, you will learn how to get unstructured JSON data from an API, store it in CockroachDB hosted on Red Hat Marketplace, and query the unstructured JSON data from the table using python runtime and Jupyter notebook.
