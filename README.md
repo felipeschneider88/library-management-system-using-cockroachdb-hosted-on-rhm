@@ -62,15 +62,15 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
 
 - Create a database called `library` by running the following command:
 
-<code><pre>
+<pre><code>
 root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>CREATE DATABASE library;</b>
-</pre></code>
+</code></pre>
 
 - You can come out of the SQL Prompt by the `\q` command:
 
-<code><pre>
+<pre><code>
 root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>\q</b>
-</pre></code>
+</code></pre>
 
 
 ### 3. Port Forward CockroachDB
