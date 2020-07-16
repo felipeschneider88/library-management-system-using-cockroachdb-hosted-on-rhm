@@ -214,7 +214,7 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
     <pre><code>root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>SELECT * FROM books;</b>
     </code></pre>
     
-    ```bash
+    ```
     id |        book_name        | book_author | book_price | book_availability
     -----+-------------------------+-------------+------------+--------------------
     1 | Harry Potter            | Jk Rowling  |          2 |                30
@@ -225,14 +225,11 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
     <pre><code>root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>SELECT * FROM borrowers;</b>
     </code></pre>
     
-    ```bash
+    ```
               id         | borrower_name | borrower_email  | book_id | total_price | book_quantity
     ---------------------+---------------+-----------------+---------+-------------+----------------
     572547941512544257 | Manoj         | manoj@gmail.com | 1,2,3   |        12.5 | 4,1,2
     ```
-
-# Summary
-
 
 # Troubleshooting
 
