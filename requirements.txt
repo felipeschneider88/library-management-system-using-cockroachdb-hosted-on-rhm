@@ -1,0 +1,4 @@
+psycopg2-binary
+sqlalchemy-cockroachdb
+sqlalchemy
+FLASK==1.1.1 
