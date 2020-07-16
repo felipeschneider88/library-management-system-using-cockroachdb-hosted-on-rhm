@@ -37,7 +37,7 @@ A Library Management System is a software that uses to maintain the record of th
 
 # Flow
 
-![](doc/sources/images/Architecture.png)
+![](doc/source/images/Architecture.png)
 
 1. User performs an operation like `borrowing a book` or `returning a book`.
 2. Application updates appropriate CockroachDB table accordingly.
