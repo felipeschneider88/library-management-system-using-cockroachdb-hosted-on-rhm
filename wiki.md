@@ -37,9 +37,12 @@ A Library Management System is a software that uses to maintain the record of th
 
 # Flow
 
-1. Flow step 1
-2. Flow step 2
-3. Flow step 3
+![](doc/sources/images/Architecture.png)
+
+1. User performs an operation like `borrowing a book` or `returning a book`.
+2. Application updates appropriate CockroachDB table accordingly.
+3. Application fetches the updated data from the table.
+4. Application displays the updated data that was feteched from the table. 
 
 # Instructions
 
@@ -64,12 +67,10 @@ A Library Management System is a software that uses to maintain the record of th
 
 > List any IBM Developer resources that are closely related to this pattern, such as other patterns, blog posts, tutorials, etc..
 
-* [title](url): description
-* [title](url): description
+* [Perform DML Operations with CockroachDB hosted on Red Hat Marketplace](https://github.com/IBM/dml-operations-cockroachdb-operator-rhm): In this tutorial, you will learn how to perform CRUD operations with CockroachDB hosted on Red Hat Marketplace using python runtime and Jupyter notebook.
 
-# Related links
+* [Store and query unstructured JSON data from CockroachDB hosted on Red Hat Marketplace](https://github.com/IBM/store-and-query-unstructured-json-cockroachdb-operator-rhm): In this tutorial, you will learn how to get unstructured JSON data from an API, store it in CockroachDB hosted on Red Hat Marketplace, and query the unstructured JSON data from the table using python runtime and Jupyter notebook.
 
-> Provide any non-IBM Developer resources that you need to link to that are NOT components or services
+* [Perform CRUD operations using Crunchy PostgreSQL for Kubernetes Operator on Red Hat Marketplace](https://github.com/IBM/perform-crud-operations-using-crunchy-Postgresaql-for-kubernetes-operator-rhm): In this tutorial, you will learn how to Perform CRUD operations using Crunchy PostgreSQL for Kubernetes Operator hosted on Red Hat marketplace using python runtime and Jupyter notebook.
 
-* [title](url): description
-* [title](url): description
+
