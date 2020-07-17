@@ -231,8 +231,6 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
     572547941512544257 | Manoj         | manoj@gmail.com | 1,2,3   |        12.5 | 4,1,2
     ```
 
-# Troubleshooting
-
 <!-- keep this -->
 ## License
 
