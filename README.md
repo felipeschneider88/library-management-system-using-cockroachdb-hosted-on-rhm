@@ -40,7 +40,7 @@ git clone https://github.com/IBM/library-management-system-using-cockroachdb-hos
 
 ### 2. Setup CockroachDB Operator on OpenShift
 
-- Follow the first 3 steps from the Tutorial to install CockroachDB Operator on OpenShift from Red Hat Marketplace.
+- Follow the first 5 steps from the Tutorial to install CockroachDB Operator on OpenShift from Red Hat Marketplace.
     - [Tutorial to Setup CockroachDB Operator on Red Hat OpenShift](https://github.com/IBM/store-and-query-unstructured-json-cockroachdb-operator-rhm)
 
 - Once the CockroachDB Operator is setup, create a database called `library` in CockroachDB.
