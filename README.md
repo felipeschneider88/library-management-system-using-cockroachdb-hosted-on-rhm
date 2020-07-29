@@ -24,10 +24,11 @@ When you have completed this code pattern, you will understand how to:
 ## Steps
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Setup CockroachDB Operator on OpenShift](#2-setup-cockroachdb-operator-on-openshift)
-3. [Port Forward CockroachDB](#3-port-forward-cockroachdb)
-4. [Run the Application](#4-run-the-application)
-5. [Explore the Library Management System](#5-explore-the-library-management-system)
+2. [Install the CockroachDB Operator from Red Hat Marketplace on OpenShift Cluster](#2-install-the-cockroachdb-operator-from-red-hat-marketplace-on-openshift-cluster)
+3. [Create a Database in CockroachDB](#3-create-a-database-in-cockroachdb)
+4. [Port Forward CockroachDB](#4-port-forward-cockroachdb)
+5. [Run the Application](#5-run-the-application)
+6. [Explore the Library Management System](#6-explore-the-library-management-system)
 
 
 ### 1. Clone the repo
@@ -38,12 +39,16 @@ Clone the `library-management-system-using-cockroachdb-hosted-on-rhm` repo local
 git clone https://github.com/IBM/library-management-system-using-cockroachdb-hosted-on-rhm
 ```
 
-### 2. Setup CockroachDB Operator on OpenShift
+### 2. Install the CockroachDB Operator from Red Hat Marketplace on OpenShift Cluster
 
-- Follow the first 5 steps from the Tutorial to install CockroachDB Operator on OpenShift from Red Hat Marketplace.
-    - [Tutorial to Setup CockroachDB Operator on Red Hat OpenShift](https://github.com/IBM/store-and-query-unstructured-json-cockroachdb-operator-rhm)
+- Steps to Deploy CockroachDB Operator from Red Hat Marketplace on a OpenShift Cluster can be found here,
+  - [Steps to Deploy CockroachDB Operator](https://github.com/IBM/rhm-operator-deployment-steps)
 
-- Once the CockroachDB Operator is setup, create a database called `library` in CockroachDB.
+- Once you have successfully setup CockroachDB Operator on OpenShift Cluster we can create a database.
+
+### 3. Create a Database in CockroachDB
+
+- Create a database called `library` in CockroachDB.
 
 - In terminal Run the following command to spin up a CockroachDB client:
 
@@ -74,7 +79,7 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>\q</b>
 </code></pre>
 
 
-### 3. Port Forward CockroachDB
+### 4. Port Forward CockroachDB
 
 - Once the CockroachDB Operator is setup successfully on your OpenShift Cluster, we need to port forward the CockroachDB database instance from OpenShift to establish connection in our application locally.  
 
@@ -91,7 +96,7 @@ Forwarding from 127.0.0.1:26257 -> 26257
 Forwarding from [::1]:26257 -> 26257
 ```
 
-### 4. Run the Application
+### 5. Run the Application
 
 - Goto the cloned repo from [step 1](#1-clone-the-repo), in Terminal run the following commands to install the required python libraries and run the app
 
@@ -109,7 +114,7 @@ Forwarding from [::1]:26257 -> 26257
 
     - The application will be listening on `<http://localhost:8090>`
 
-### 5. Explore the Library Management System
+### 6. Explore the Library Management System
 
 - Visit <http://localhost:8090> on your browser.
 
