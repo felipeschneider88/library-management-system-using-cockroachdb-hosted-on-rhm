@@ -1,12 +1,12 @@
-# Library Management System using CockroachDB hosted on Red Hat Marketplace
+# Build a library management system using CockroachDB hosted on Red Hat Marketplace
 
-A Library Management System is a software that uses to maintain the record of the library. It contains work like the number of available books in the library, the number of books are issued or returning or renewing a book or late fine charge record, etc.
+A library management system is software that maintains a library's records. It captures data specific to the books on hand, which books have been rented, late fees, member information, and more.
 
-In this code pattern, we will build a Library Management System using CockroachDB hosted on RHM. CockroachDB is an ultra resilient, distributed SQL that can easily scale-out serializable transactions for your apps and services. It is cloud-native, architected to simplify scale and also guarantee consistent transactions across multiple regions and multiple clouds.
+In this code pattern, we show you how to build a library management system using CockroachDB hosted on Red Hat Marketplace. CockroachDB is an ultra resilient, distributed SQL that can easily scale-out serializable transactions for your apps and services. <!--EM: This is lifted straight from the RH Marketplace site. We have to be careful not to copy/paste their content. It's bad for SEO, for starters, and against our standards at IBM. What does this mean exactly?--> Its cloud-native architecture makes it easier to scale and also guarantees consistent transactions across multiple regions and multiple clouds.
 
 When you have completed this code pattern, you will understand how to:
 
-* Install CockroachDB Operator from Red Hat Marketplace on a OpenShift Cluster
+* Install CockroachDB Operator from Red Hat Marketplace on an OpenShift Cluster
 * Create a CockroachDB cluster instance
 * Create a user and database in CockroachDB
 * Store and query unstructured JSON data from a third-party API in CockroachDB
@@ -16,8 +16,8 @@ When you have completed this code pattern, you will understand how to:
 
 ## Flow
 
-1. User performs an operation like `borrowing a book` or `returning a book`.
-2. Application updates appropriate CockroachDB table accordingly.
+1. User performs an operation like borrowing a book or returning a book.
+2. Application updates the appropriate CockroachDB table accordingly.
 3. Application fetches the updated data from the table.
 4. Application displays the updated data that was feteched from the table. 
 
@@ -26,9 +26,9 @@ When you have completed this code pattern, you will understand how to:
 1. [Clone the repo](#1-clone-the-repo)
 2. [Install the CockroachDB Operator from Red Hat Marketplace on OpenShift Cluster](#2-install-the-cockroachdb-operator-from-red-hat-marketplace-on-openshift-cluster)
 3. [Create a Database in CockroachDB](#3-create-a-database-in-cockroachdb)
-4. [Port Forward CockroachDB](#4-port-forward-cockroachdb)
-5. [Run the Application](#5-run-the-application)
-6. [Explore the Library Management System](#6-explore-the-library-management-system)
+4. [Port forward CockroachDB](#4-port-forward-cockroachdb)
+5. [Run the application](#5-run-the-application)
+6. [Explore the library management system](#6-explore-the-library-management-system)
 
 
 ### 1. Clone the repo
@@ -41,16 +41,16 @@ git clone https://github.com/IBM/library-management-system-using-cockroachdb-hos
 
 ### 2. Install the CockroachDB Operator from Red Hat Marketplace on OpenShift Cluster
 
-- Steps to Deploy CockroachDB Operator from Red Hat Marketplace on a OpenShift Cluster can be found here,
+- Follow the steps to deploy the CockroachDB Operator from Red Hat Marketplace on a OpenShift Cluster:
   - [Steps to Deploy CockroachDB Operator](https://github.com/IBM/rhm-operator-deployment-steps)
 
-- Once you have successfully setup CockroachDB Operator on OpenShift Cluster we can create a database.
+- Once you successfully set up CockroachDB Operator on OpenShift Cluster, you can create a database.
 
-### 3. Create a Database in CockroachDB
+### 3. Create a database in CockroachDB
 
 - Create a database called `library` in CockroachDB.
 
-- In terminal Run the following command to spin up a CockroachDB client:
+- In your terminal, run the following command to spin up a CockroachDB client:
 
 ```bash
 $ kubectl run -it --rm cockroach-client \
@@ -60,7 +60,7 @@ $ kubectl run -it --rm cockroach-client \
 ./cockroach sql --insecure --host=example-cockroachdb-public.cockroachdb-test
 ```
 
-- This should run the CockroachDB client and take you to a `SQL Command Prompt` as shown. If you don't see a command prompt, try pressing enter.
+- This should run the CockroachDB client and take you to a `SQL Command Prompt` as shown. If you don't see a command prompt, try pressing **Enter**.
 
 ```bash
 root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
@@ -79,13 +79,13 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>\q</b>
 </code></pre>
 
 
-### 4. Port Forward CockroachDB
+### 4. Port forward CockroachDB
 
-- Once the CockroachDB Operator is setup successfully on your OpenShift Cluster, we need to port forward the CockroachDB database instance from OpenShift to establish connection in our application locally.  
+Once the CockroachDB Operator is set up successfully on your OpenShift Cluster, you need to port forward the CockroachDB database instance from OpenShift to establish connection in our application locally.  
 
-- In Terminal run the following command to port forward `26257` port from the CockroachDB database instance.
+- In your terminal, run the following command to port forward the `26257` port from the CockroachDB database instance.
 
->NOTE: You must be logged in with your `OC login` credentials before running the following commands.
+> NOTE: You must be logged in with your `OC login` credentials before running the following commands.
 
 ```bash
 $ kubectl port-forward example-cockroachdb-0 26257
@@ -96,11 +96,11 @@ Forwarding from 127.0.0.1:26257 -> 26257
 Forwarding from [::1]:26257 -> 26257
 ```
 
-### 5. Run the Application
+### 5. Run the application
 
-- Goto the cloned repo from [step 1](#1-clone-the-repo), in Terminal run the following commands to install the required python libraries and run the app
+- Go to the cloned repo from [step 1](#1-clone-the-repo). In your terminal, run the following commands to install the required Python libraries and run the application. 
 
-    - Install Required python libraries, by running the following command:
+    - Install the required Python libraries by running the following command:
 
     ```bash
     $ pip install -r requirements.txt
@@ -112,52 +112,52 @@ Forwarding from [::1]:26257 -> 26257
     $ python app.py
     ```
 
-    - The application will be listening on `<http://localhost:8090>`
+The application will be listening on `<http://localhost:8090>`
 
-### 6. Explore the Library Management System
+### 6. Explore the library management system
 
 - Visit <http://localhost:8090> on your browser.
 
-- There are three **Tabs**, `Display Books`, `Borrow Books` and `Return Books`.
+- There are three tabs in the system: Display Books, Borrow Books, and Return Books.
 
-- In `Display Books`, you can see three books listed, the book details include:
+- In the Display Books tab, you can see three books listed. The book details include:
     - Book Name
     - Book Author
     - Book Availibility
     - Book Amount
 
->NOTE: These details are initialized by the python script.
+>NOTE: These details are initialized by the Python script.
 
 ![](doc/source/images/displaybooks.png)
 
-- Click on the `Borrow Books` tab, you can borrow the available books from the store. Borrower details include:
+- Click the **Borrow Books** tab which shows which books you can borrow the from the store.<!--EM: Are we in a store or a library?--> Borrower details include:
     - Borrower Name
     - Borrower Email
     - Available books that can be borrowed
 
-- Enter your `name`, `email` and `book quantities` that you wish to borrow and finally click on `submit` as shown.
+- Enter your name, email address, and book quantities that you wish to borrow and click **Submit** as shown.
 
-- On Successfully borrowing, you can see the availibility of the books decreasing.
+- After you've successfully borrowed a book, you can see the number of availibile books decreasing.
 
 ![](doc/source/images/borrowbooks.png)
 
-- Click on the `Return Books` tab, you can return the borrowed books from here.
+- Click on the **Return Books** tab. You can return the borrowed books from here.
 
-- Enter your `email` from which you borrowed the books, and click on search.
+- Enter your email address for who borrowed the books, and click **Search**.
 
-- Your name, the books that you have borrowed and the total amount due will be displayed. Click on pay and return to return the books as shown.
+- Your name, the books that you have borrowed, and the total amount due will be displayed. Click on pay and return to return the books as shown.<!--EM: Why are we paying if it's a library? Or is it just that a library management system can be used within a store?-->
 
 ![](doc/source/images/returnbooks.png)
 
-- On Successfully returning the books, you will get an aleart as shown.
+- After you successfully return the books, you will get an aleart like the following:
 
 ![](doc/source/images/returnedbook.png)
 
-- You can see the availibility of the books increased again in the `Display Books` section.
+Notice that the availibility of the books increased again in the `Display Books` section.
 
-- You can verify the table in the ClockroachDB instance through the CockroachDB client from terminal.
+You can verify the table in the ClockroachDB instance through the CockroachDB client from terminal.
 
-- In terminal Run the following command to spin up a CockroachDB client:
+- In your terminal, run the following command to spin up a CockroachDB client:
 
 ```bash
 $ kubectl run -it --rm cockroach-client \
@@ -167,13 +167,13 @@ $ kubectl run -it --rm cockroach-client \
 ./cockroach sql --insecure --host=example-cockroachdb-public.cockroachdb-test
 ```
 
-- This should run the CockroachDB client and take you to a `SQL Command Prompt` as shown. If you don't see a command prompt, try pressing enter.
+This should run the CockroachDB client and take you to a `SQL Command Prompt` as shown. If you don't see a command prompt, press **Enter**.
 
 ```bash
 root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
 ```
 
-- From the CockroachDB client, run the following commands to view `user`, `database` and `table` which was created by the Library Management Application:
+- From the CockroachDB client, run the following commands to view the `user`, `database` and `table` that were created by the Library Management Application:
 
     - View `users` by running the `SHOW users;` command as follows:
     <pre><code>root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>SHOW users;</b>
@@ -200,7 +200,8 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
 
     Time: 2.890031ms</code></pre>
 
-    - To view the tables present in `library` database, run the `USE library;` command to switch to `library` database, and run `\d` command to view the `tables` as follows:
+    - To view the tables present in the `library` database, run the `USE library;` command to switch to `library` database, and run `\d` command to view the `tables` as follows:
+    
     <pre><code>root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>USE library;</b>
     SET
 
@@ -215,7 +216,8 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
 
     Time: 3.684617ms</code></pre>
 
-    - Finally to view the tables `books` and `borrowers` run the `SELECT` command as follows:
+    - Finally, to view the tables `books` and `borrowers`, run the `SELECT` command as follows: <!--EM: I'm confused by the following code. Should that be "commands" instead of "command as this looks like 3 different chunks of code to me. -->
+    
     <pre><code>root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb> <b>SELECT * FROM books;</b>
     </code></pre>
     
@@ -237,6 +239,7 @@ root@example-cockroachdb-public.cockroachdb-test:26257/defaultdb>
     ```
 
 <!-- keep this -->
+
 ## License
 
 This code pattern is licensed under the Apache License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1](https://developercertificate.org/) and the [Apache License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
