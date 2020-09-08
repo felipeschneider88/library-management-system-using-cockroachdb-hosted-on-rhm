@@ -42,7 +42,7 @@ git clone https://github.com/IBM/library-management-system-using-cockroachdb-hos
 ### 2. Install the CockroachDB Operator from Red Hat Marketplace on OpenShift Cluster
 
 - Follow the steps to deploy the CockroachDB Operator from Red Hat Marketplace on a OpenShift Cluster:
-  - [Steps to Deploy CockroachDB Operator](https://github.com/IBM/rhm-operator-deployment-steps)
+  - [Get started using a CockroachDB operator hosted on Red Hat Marketplace](https://developer.ibm.com/tutorials/get-started-using-a-cockroachdb-operator-hosted-on-red-hat-marketplace/)
 
 - Once you successfully set up CockroachDB Operator on OpenShift Cluster, you can create a database.
 
