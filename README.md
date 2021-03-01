@@ -1,4 +1,7 @@
-# Build a library management system using CockroachDB hosted on Red Hat Marketplace
+
+# Build a library management system using CockroachDB and dotnet core
+
+Based on the code from the [IBM library](https://github.com/IBM/library-management-system-using-cockroachdb-hosted-on-rhm)
 
 A library management system is software that maintains a library's records. It captures data specific to the books on hand, which books have been rented, late fees, member information, and more.
 
@@ -24,11 +27,10 @@ When you have completed this code pattern, you will understand how to:
 ## Steps
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Install the CockroachDB Operator from Red Hat Marketplace on OpenShift Cluster](#2-install-the-cockroachdb-operator-from-red-hat-marketplace-on-openshift-cluster)
+2. [Install the CockroachDB localy](#2-install-the-cockroachdb-localy)
 3. [Create a Database in CockroachDB](#3-create-a-database-in-cockroachdb)
-4. [Port forward CockroachDB](#4-port-forward-cockroachdb)
-5. [Run the application](#5-run-the-application)
-6. [Explore the library management system](#6-explore-the-library-management-system)
+4. [Run the application](#5-run-the-application)
+5. [Explore the library management system](#6-explore-the-library-management-system)
 
 
 ### 1. Clone the repo
@@ -39,14 +41,11 @@ Clone the `library-management-system-using-cockroachdb-hosted-on-rhm` repo local
 git clone https://github.com/IBM/library-management-system-using-cockroachdb-hosted-on-rhm
 ```
 
-### 2. Install the CockroachDB Operator from Red Hat Marketplace on OpenShift Cluster
+### 2. Install the CockroachDB localy
 
->Note: If you have already followed the [Get started using a CockroachDB operator hosted on Red Hat Marketplace](https://developer.ibm.com/tutorials/get-started-using-a-cockroachdb-operator-hosted-on-red-hat-marketplace/) Tutorial, you can skip this section.
+Please, follow this steps to [install cochroackDB](https://www.cockroachlabs.com/docs/v20.1/install-cockroachdb-windows)
+Once installed, run in secure mode using the script [startCockCroach.bat](https://github.com/felipeschneider88/CockroachDBFullStackApp/blob/main/startCockCroach.bat)
 
-- Follow the steps to deploy the CockroachDB Operator from Red Hat Marketplace on a OpenShift Cluster:
-  - [Get started using a CockroachDB operator hosted on Red Hat Marketplace](https://developer.ibm.com/tutorials/get-started-using-a-cockroachdb-operator-hosted-on-red-hat-marketplace/)
-
-- Once you successfully set up CockroachDB Operator on OpenShift Cluster, you can create a database.
 
 ### 3. Create a database in CockroachDB
 
